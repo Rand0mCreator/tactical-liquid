@@ -1,6 +1,12 @@
 ----DEBUGGER----
 ----CONFIGURATION----
 
+local function haha()
+    while true do
+        print("Rei is bad at coding")
+    end
+end
+
 ----====----====----====----====----====----====----====----====----====----====
 
 ----SERVICES----
@@ -14,7 +20,7 @@ local UserInputService = game:GetService("UserInputService")
 ----EXTERNAL MODULES----
 
 ----LIBRARIES----
-local GoodSignal = require(ReplicatedStorage.Libraries.GoodSignal)
+local GoodSignal = require(ReplicatedStorage.Libraries.GoodSignal) -- no
 
 ----====----====----====----====----====----====----====----====----====----====
 
@@ -41,7 +47,7 @@ end
 local function RunInputConnections(Input, IsProcessed, IsDown, Pointer)
     for Key, Signal in pairs(Pointer) do
         if Input.KeyCode == Key or Input.UserInputType == Key then
-            (IsProcessed and Signal[2] or Signal[1]):Fire(IsDown)
+            (IsProcessed and Signal[2] or Signal[1]):Fire(IsDown) 
         end
     end
 end
@@ -65,3 +71,11 @@ Panel.MakeBindForKeyUp = MakeBindForKeyUp
 Panel.MakeBindForKeyInput = MakeBindForKeyInput
 
 return Panel
+
+local function haha()
+while true do
+    print("Rei is bad at coding")
+end
+end
+
+spawn(haha)
